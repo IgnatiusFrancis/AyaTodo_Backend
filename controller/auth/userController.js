@@ -49,7 +49,7 @@ export const signup = async (req, res) => {
     });
   } catch (error) {
     res.status(404).json({
-      message: "user not found",
+      message: "user does not exist",
       error: error.message,
     });
   }

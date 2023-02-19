@@ -31,10 +31,12 @@ const TodoSchema = new mongoose.Schema(
   }
 );
 
-// TodoSchema.virtual("formattedCreatedAt").get(function () {
-//   return moment(this.expiration).format("MMM D, YYYY h:mm A z");
+// TodoSchema.virtual("formattedExpiration").get(function () {
+//   return this.expiration.toLocaleString();
 // });
-TodoSchema.plugin(mongooseDateFormat); // format: YYYY-MM-DD HH:mm:ss
+TodoSchema.plugin(mongooseDateFormat, {
+  format: "dd-mm-yy hh:MM:ss",
+}); // format: YYYY-MM-DD HH:mm:ss
 const Todo = mongoose.model("Todo", TodoSchema);
 
 // module.exports = Todo;
