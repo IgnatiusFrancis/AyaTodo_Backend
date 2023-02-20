@@ -1,6 +1,4 @@
 import jwt from "jsonwebtoken";
-import { obtainToken } from "../utils/obtainToken.js";
-import verifyToken from "../utils/verifyToken.js";
 import User from "../model/user.js";
 
 export const isLogin = async (req, res, next) => {
